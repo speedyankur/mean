@@ -1,0 +1,31 @@
+.my-drop-zone {
+  border: dotted 3px lightgray !important;
+}
+
+.nv-file-over {
+  border: dotted 4px green !important;
+}
+
+.cropper-example-3 {
+  width: 100%;
+}
+
+.cropper-example-3 > img {
+  max-width: 100%;
+}
+
+.custom-modal-backdrop {
+  background-color: black;
+}
+
+.custom-modal-backdrop.in {
+  opacity: .9;
+}
+
+.cropper-container {
+  position: relative;
+}
+
+.cropper-container .cropper-canvas {
+  opacity: 0.5;
+}

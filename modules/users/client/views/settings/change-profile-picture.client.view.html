@@ -3,7 +3,7 @@
     <form class="signin form-horizontal">
       <fieldset>
         <div class="form-group text-center">
-          <img ng-src="{{imageURL}}" alt="{{user.displayName}}" class="img-thumbnail user-profile-picture">
+          <img ng-src="{{croppedImg || imageURL}}" alt="{{user.displayName}}" class="img-thumbnail user-profile-picture">
         </div>
         <div class="text-center form-group" ng-hide="uploader.queue.length">
           <span class="btn btn-default btn-file">
@@ -11,7 +11,10 @@
           </span>
         </div>
         <div class="text-center form-group" ng-show="uploader.queue.length">
-          <button class="btn btn-primary" ng-click="uploadProfilePicture();">Upload</button>
+          <alert type="info" ng-show="!croppedImg">Click "Edit" to adjust image.</alert>
+          <button class="btn btn-primary" ng-click="openModal()">Edit</button>
+          <span class="btn btn-info btn-file">Change Image<input type="file" nv-file-select uploader="uploader" ng-click="uploader.clearQueue()"/></span>
+          <button class="btn btn-success" ng-click="uploadProfilePicture();">Upload</button>
           <button class="btn btn-default" ng-click="cancelUpload();">Cancel</button>
         </div>
         <div ng-show="success" class="text-center text-success">

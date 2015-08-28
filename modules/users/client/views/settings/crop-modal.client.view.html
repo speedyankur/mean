@@ -1,0 +1,18 @@
+<div ng-init="init()">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2>Edit Image</h2>
+    </div>
+    <div class="modal-body">
+      <p>Select the desired area.</p>
+      <div class="cropper-example-3">
+        <img ng-if="dataUrl" ng-src="{{dataUrl}}" ng-cropper ng-cropper-proxy="cropperProxy" ng-cropper-show="showEvent" ng-cropper-hide="hideEvent" ng-cropper-options="options">
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default btn-raised" ng-click="rotate(-90)">-90</button>
+      <button type="button" class="btn btn-default btn-raised" ng-click="rotate(90)">+90</button>
+      <button type="button" class="btn btn-success btn-raised" data-dismiss="modal" ng-click="finish()">Finish</button>
+    </div>
+  </div>
+</div>
