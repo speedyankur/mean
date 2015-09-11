@@ -31,7 +31,7 @@ angular.module(ApplicationConfiguration.applicationModuleName).run(function ($ro
           $state.go('forbidden');
         } else {
           $state.go('authentication.signin').then(function () {
-            $rootScope.$broadcast('$stateChangeSuccess', 'authentication.signin', {}, toState, toParams);
+            storePreviousState(toState, toParams);
           });
         }
       }
@@ -40,14 +40,20 @@ angular.module(ApplicationConfiguration.applicationModuleName).run(function ($ro
 
   // Record previous state
   $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
-    if (!fromState.data || !fromState.data.ignoreState) {
+    storePreviousState(fromState, fromParams);
+  });
+
+  // Store previous state
+  function storePreviousState(state, params) {
+    // only store this state if it shouldn't be ignored 
+    if (!state.data || !state.data.ignoreState) {
       $state.previous = {
-        state: fromState,
-        params: fromParams,
-        href: $state.href(fromState, fromParams)
+        state: state,
+        params: params,
+        href: $state.href(state, params)
       };
     }
-  });
+  }
 });
 
 //Then define the init function for starting up the application
