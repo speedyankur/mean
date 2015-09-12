@@ -1,0 +1,101 @@
+<script type="text/javascript" src="services/FileSaver.min.js"></script>
+<section data-ng-controller="CardController">
+  <div class="page-header">
+    <h1>Generate Card</h1>
+  </div>
+  <div class="col-md-12">
+    <form name="cardForm" class="form-horizontal" novalidate>
+      <div class="col-md-6">
+        <div class="row">
+          <table class="table">
+            <tbody>
+              <tr>
+                <td>Full Name</td>
+                <td>
+                  <input type="text" class="form-control" ng-model="card.fullname">
+                </td>
+              </tr>
+              <tr>
+                <td>Company Name</td>
+                <td>
+                  <input type="text" class="form-control" ng-model="card.company">
+                </td>
+              </tr>
+              <tr>
+                <td>Designation</td>
+                <td>
+                  <input type="text" class="form-control" ng-model="card.designation">
+                </td>
+              </tr>
+              <tr>
+                <td>Email</td>
+                <td>
+                  <input type="text" class="form-control" ng-model="card.email">
+                </td>
+              </tr>
+              <tr>
+                <td>Phone no</td>
+                <td>
+                  <input type="text" class="form-control" ng-model="card.phoneno">
+                </td>
+              </tr>
+              <tr>
+                <td>Fax</td>
+                <td>
+                  <input type="text" class="form-control" ng-model="card.fax">
+                </td>
+              </tr>
+              <tr>
+                <td>Theme</td>
+                <td>
+                  <select name="theme" class="form-control" id="theme" ng-model="card.theme" placeholder="select theme">
+                    <option value="plain">Plain theme</option>
+                    <option value="withTheme">Red test theme</option>
+                  </select>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="row">
+          <button class="btn btn-primary pull-right" ng-click="generateCard()">Generate card <img ng-if="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" /></button>
+        </div>
+      </div>
+      <!-- template at right side-->
+      <div class="col-md-6">
+        <div class="box effect3" ng-if="card.theme=='plain'">
+          <div class="row">
+            <div class="col-sm-12 text-left">
+              <h2 class="name">{{card.fullname}} <small>{{card.designation}}</small></h2>
+              <h3 class="company">{{card.company}}</h3>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12 emailgroup text-right">
+              <p>{{card.website}}</p>
+              <p>{{card.email}}</p>
+              <p><span ng-show="card.phoneno.length">Phone no:</span> {{card.phoneno}}</p>
+              <p><span ng-show="card.fax.length">Fax :</span>{{card.fax}}</p>
+            </div>
+          </div>
+        </div>
+        <div class="box1 effect3" ng-if="card.theme=='withTheme'">
+          <div class="row">
+            <div class="col-sm-12 text-left">
+              <h2 class="name">{{card.fullname}} <small>{{card.designation}}</small></h2>
+              <h3 class="company">{{card.company}}</h3>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12 emailgroup text-right">
+              <p>{{card.website}}</p>
+              <p>{{card.email}}</p>
+              <p><span ng-show="card.phoneno.length">Phone no:</span> {{card.phoneno}}</p>
+              <p><span ng-show="card.fax.length">Fax :</span>{{card.fax}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>

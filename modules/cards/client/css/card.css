@@ -1,0 +1,53 @@
+.box h3 {
+  text-align: center;
+  position: relative;
+  top: 80px;
+}
+
+.box {
+  width: 70%;
+  height: 200px;
+  background: #FFF;
+  margin: 20px auto;
+  border-style: dashed;
+  border-width: 2px;
+  background-color: #cccccc;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.box1 {
+  width: 70%;
+  height: 200px;
+  background: #FFF;
+  margin: 20px auto;
+  border-style: dashed;
+  border-width: 2px;
+  background-image: url("../img/card_bg.jpg");
+  background-color: #cccccc;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.effect3 {
+  position: relative;
+}
+
+.name {
+  margin: 30px 10px 3px;
+}
+
+/* TODO: please, do not override */
+/*p {
+  margin: 0 0 1px !important;
+}
+
+h3 {
+  top: 1px !important;
+  text-align: left !important;
+  margin: 1px 10px 3px;
+}*/
+
+.emailgroup {
+  margin: 10px -10px 1px;
+}

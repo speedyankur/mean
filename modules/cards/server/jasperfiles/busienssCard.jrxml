@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.0.1.final using JasperReports Library version 6.0.0  -->
+<!-- 2015-09-06T19:56:13 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="busienssCard" language="groovy" pageWidth="252" pageHeight="144" orientation="Landscape" columnWidth="250" leftMargin="1" rightMargin="1" topMargin="1" bottomMargin="1" uuid="16c4767f-608a-4cb5-9abe-cde3fb3f8363">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="fullname" class="java.lang.String"/>
+	<parameter name="designation" class="java.lang.String"/>
+	<parameter name="company" class="java.lang.String"/>
+	<parameter name="email" class="java.lang.String"/>
+	<parameter name="phoneno" class="java.lang.String"/>
+	<parameter name="fax" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="138">
+			<image scaleImage="FillFrame">
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="250" height="138" uuid="b21d72da-ef96-44c9-8aba-45cb38dd0a18">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="local_mesure_unity" value="pixel"/>
+				</reportElement>
+				<imageExpression><![CDATA["business_card_252_144.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="150" y="126" width="37" height="10" uuid="c8656fe5-7ee2-4c40-a3cc-5f7c907741a9">
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Century" size="8"/>
+				</textElement>
+				<text><![CDATA[ Fax:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="150" y="116" width="37" height="10" uuid="4204873a-e19d-44de-a1b6-ef5c83acd0c3">
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Century" size="8"/>
+				</textElement>
+				<text><![CDATA[Phone no:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="126" width="28" height="10" uuid="2b79e64c-9fa7-407f-8508-c1aa7be9987b">
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Century" size="8"/>
+				</textElement>
+				<text><![CDATA[E-mail:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="40" y="126" width="110" height="10" uuid="47657363-f6c4-4f45-87cb-71862a1ccfe2">
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Century" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{email}Helloa]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="187" y="116" width="52" height="10" uuid="491e66ef-c74f-415f-b5d5-1ca486a4ff41">
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Century" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{phoneno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="187" y="126" width="52" height="10" uuid="56308637-79d2-471b-99f0-a6a8c6dc2d31">
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Century" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{fax}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="10" y="10" width="177" height="23" uuid="8fabb2ed-d7fd-45f2-8e54-ac061770a086"/>
+				<textElement>
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{fullname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="40" y="33" width="147" height="20" uuid="76451605-8879-4a45-8a47-12abf199ff2c"/>
+				<textElement>
+					<font size="14" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{designation}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="40" y="53" width="147" height="17" uuid="3e2c4557-16b8-499e-b18e-41f564547550"/>
+				<textElement>
+					<font size="12" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{company}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+</jasperReport>
