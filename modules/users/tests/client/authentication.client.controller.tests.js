@@ -8,6 +8,7 @@
       scope,
       $httpBackend,
       $stateParams,
+      $state,
       $location;
 
     beforeEach(function () {
@@ -58,6 +59,28 @@
           expect(scope.authentication.user).toEqual('Fred');
           expect($location.url()).toEqual('/');
         });
+
+        it('should be redirected to previous state after successful login',
+          inject(function (_$state_) {
+            $state = _$state_;
+            $state.previous = {
+              state: {
+                name: 'articles.create'
+              },
+              params: {},
+              href: '/articles/create'
+            };
+
+            // Test expected GET request
+            $httpBackend.when('POST', '/api/auth/signin').respond(200, 'Fred');
+
+            scope.signin(true);
+            $httpBackend.flush();
+            spyOn($state, 'transitionTo');
+
+            // Test scope value
+            expect($state.transitionTo).toHaveBeenCalledWith($state.previous);
+          }));
 
         it('should fail to log in with nothing', function () {
           // Test expected POST request
