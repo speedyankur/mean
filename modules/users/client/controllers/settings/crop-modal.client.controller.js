@@ -28,7 +28,11 @@ angular.module('users').controller('CropModalController', ['$scope', '$timeout',
 
     $scope.finish = function () {
       // Resize image
-      Cropper.crop(file, data).then(Cropper.encode).then(function (imgUrl) {
+      data.x=Math.floor(data.x);
+      data.y=Math.floor(data.y);
+      Cropper.crop(file, data).then(function(blob) {
+        return Cropper.scale(blob, {width: 200});
+      }).then(Cropper.encode).then(function (imgUrl) {
         $scope.$emit('finishedCrop', imgUrl);
         $modalInstance.dismiss('cancel');
       });
